@@ -47,6 +47,7 @@ if ( ! function_exists( 'understrap_setup' ) ) {
 		register_nav_menus(
 			array(
 				'primary' => __( 'Primary Menu', 'understrap' ),
+				'footer' => __( 'Footer Menu', 'understrap' ),
 			)
 		);
 
@@ -71,6 +72,8 @@ if ( ! function_exists( 'understrap_setup' ) ) {
 		 * Adding Thumbnail basic support
 		 */
 		add_theme_support( 'post-thumbnails' );
+
+		add_image_size( 'product', 280 );
 
 		/*
 		 * Adding support for Widget edit icons in customizer

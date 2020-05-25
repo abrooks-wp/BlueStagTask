@@ -10,7 +10,7 @@
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 
-get_header();
+get_header( 'home' );
 $container = get_theme_mod( 'understrap_container_type' );
 
 if ( is_front_page() ) {
@@ -27,18 +27,18 @@ if ( is_front_page() ) {
 			<div class="col-md-12 content-area" id="primary">
 
 				<main class="site-main" id="main" role="main">
-
+					<section class="content">
 					<?php
 					while ( have_posts() ) {
 						the_post();
-						get_template_part( 'loop-templates/content', 'page' );
+						get_template_part( 'loop-templates/content', 'home' );
 
-						// If comments are open or we have at least one comment, load up the comment template.
-						if ( comments_open() || get_comments_number() ) {
-							comments_template();
-						}
 					}
+
+					get_template_part( 'loop-templates/content', 'funding' );
 					?>
+					</section>
+					
 
 				</main><!-- #main -->
 

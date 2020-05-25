@@ -2,5 +2,11 @@
 // To overwrite a Bootstrap variable you don´t have to touch the Bootstrap folder.
 // Just copy a variable from src/sass/bootstrap4/_variables.scss, paste it here and edit the value.
 
+$primary: #1b1b1b; // Thats a sample how you could change a BootStrap variable.
+$white: #ffffff;
+$secondary: rgb(68, 215, 182);
 
-$primary: #5533ff; // Thats a sample how you could change a BootStrap variable.
+$breakpoint-sm: 576px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 992px;
+$breakpoint-xl: 1200px;

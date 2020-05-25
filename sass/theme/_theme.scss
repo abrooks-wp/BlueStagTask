@@ -1,1 +1,324 @@
 // This is an empty scss file for your custom styles - Please add your super duper awesome mega design styles here
+body {
+	background-color: $primary;
+	color: $white;
+	font-family: "Nunito Sans";
+	font-weight: 400;
+}
+
+@media (min-width: $breakpoint-xl) {
+	.container {
+		max-width: 1440px;
+	}
+}
+
+h1,
+h2,
+h3,
+h4 {
+	font-family: "Nunito Sans";
+	font-weight: 900;
+}
+
+a:link,
+a:visited,
+.navbar-dark .navbar-nav .nav-link {
+	color: $white;
+}
+
+a:hover,
+a:focus,
+.navbar-dark .navbar-nav .nav-link:hover,
+.navbar-dark .navbar-nav .nav-link:focus {
+	color: $secondary;
+}
+
+.navbar-dark .navbar-nav .btn .nav-link:link,
+.navbar-dark .navbar-nav .btn .nav-link:visited,
+.navbar-dark .navbar-nav .btn .nav-link:hover,
+.navbar-dark .navbar-nav .btn .nav-link:focus {
+	color: $primary;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+	font-size: 1.25rem;
+	font-weight: 600;
+	padding: 0.5rem;
+	text-align: center;
+
+	&:hover {
+		color: $secondary;
+	}
+}
+
+.navbar-dark .navbar-nav .btn {
+	margin-left: 1.5rem;
+}
+
+.navbar-dark .navbar-nav .btn .nav-link {
+	padding: 0;
+}
+
+.navbar-dark .navbar-nav .icon {
+	margin-left: 1rem;
+	display: none;
+
+	@media (min-width: $breakpoint-lg) {
+		display: list-item;
+	}
+}
+
+.navbar-dark .navbar-nav .icon .nav-link {
+	color: $primary;
+	background-color: $white;
+	border-radius: 50%;
+	padding: 0.5rem 1rem;
+	transition: all 0.3s;
+	position: relative;
+}
+
+.navbar-dark .navbar-nav .icon .nav-link::after {
+	width: 101%;
+	height: 0;
+	top: 50%;
+	left: 50%;
+	background: $secondary;
+	opacity: 0;
+	transform: translateX(-50%) translateY(-50%);
+	content: "";
+	position: absolute;
+	z-index: -1;
+	transition: all 0.3s;
+}
+
+.navbar-dark .navbar-nav .icon .nav-link .fa {
+	position: relative;
+	z-index: 2;
+}
+
+.navbar-dark .navbar-nav .icon .nav-link:hover::after,
+.navbar-dark .navbar-nav .icon .nav-link:focus::after {
+	height: 100%;
+	opacity: 1;
+	border-radius: 50%;
+	z-index: 0;
+}
+
+h1,
+h2 {
+	font-size: 2rem;
+
+	@media (min-width: $breakpoint-lg) {
+		font-size: 3.125rem;
+	}
+}
+
+.center {
+	text-align: center;
+}
+
+.btn {
+	border-radius: 50px;
+	font-weight: 900;
+	padding: 0.5rem 2rem !important;
+
+	&--white {
+		background-color: $white;
+		transition: all 0.3s ease-in;
+
+		&:link,
+		&:visited {
+			color: $primary;
+		}
+
+		&:hover,
+		&:focus {
+			background-color: $secondary;
+		}
+	}
+
+	&--black {
+		background-color: $primary;
+		transition: all 0.3s ease-in;
+
+		&:link,
+		&:visited {
+			color: $white;
+		}
+
+		&:hover,
+		&:focus {
+			background-color: $secondary;
+		}
+	}
+}
+
+/* Home Hero Section */
+.hero {
+	&--home {
+		background-image: linear-gradient(to left, rgba(0, 0, 0, 0), #000000),
+			url(../images/banner.jpg);
+		background-repeat: no-repeat;
+		background-position: top center;
+		background-size: cover;
+		padding-top: 1.5em;
+	}
+
+	& .entry-header {
+		padding: 15rem 0 8rem;
+
+		@media (min-width: $breakpoint-lg) {
+			max-width: 55%;
+		}
+	}
+}
+
+/* Homepage About Section */
+.about {
+	padding: 3rem 0 6rem;
+
+	@media (min-width: $breakpoint-lg) {
+		padding: 12rem 0;
+	}
+
+	.row {
+		flex-direction: column-reverse;
+
+		@media (min-width: $breakpoint-md) {
+			flex-direction: row;
+		}
+	}
+
+	h2 {
+		margin-top: 3rem;
+
+		@media (min-width: $breakpoint-lg) {
+			margin-top: 0;
+		}
+	}
+
+	p {
+		font-size: 1.25rem;
+		margin-top: 3rem;
+
+		@media (min-width: $breakpoint-xl) {
+			max-width: 80ch;
+			margin: 3rem 8em 0 0;
+		}
+	}
+
+	.inline-photo {
+		opacity: 0;
+		transform: translateX(-40em);
+		transition: transform 6s 0.25s cubic-bezier(0, 1, 0.3, 1),
+			opacity 1.5s 0.25s ease-out;
+
+		&.is-visible {
+			opacity: 1;
+			transform: translateX(0);
+		}
+	}
+}
+
+/* Funding */
+.funding {
+	background: linear-gradient(to left, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+		url(../images/face-scaled.jpg) no-repeat top center;
+	background-size: cover;
+	min-height: auto;
+	padding: 7rem 0;
+
+	@media (min-width: $breakpoint-xl) {
+		padding: 14rem 0;
+	}
+	position: relative;
+
+	.content {
+		p {
+			font-size: 1.25rem;
+			max-width: 80ch;
+			margin: 3rem 0 0;
+		}
+	}
+
+	.thumbnail {
+		align-self: center;
+		margin-top: 3rem;
+		text-align: center;
+
+		@media (min-width: $breakpoint-lg) {
+			margin-top: 0;
+			text-align: right;
+		}
+	}
+}
+
+.achieve {
+	padding: 5rem 0;
+
+	h2 {
+		margin-bottom: 2rem;
+	}
+
+	.vector {
+		align-self: center;
+		justify-content: center;
+	}
+}
+
+.products {
+	h2 + p {
+		font-size: 1.5rem;
+		margin-top: 2rem;
+		margin-bottom: 2rem;
+	}
+
+	&--container {
+		display: flex;
+		align-content: center;
+		justify-content: top;
+	}
+
+	.col-half {
+		width: 50%;
+		padding: 1.5rem;
+
+		img {
+			max-width: 100%;
+			height: auto;
+		}
+
+		p {
+			margin-top: 1.5rem;
+		}
+	}
+
+	.white {
+		background-color: $white;
+	}
+
+	.black {
+		background-color: $primary;
+	}
+
+	.btn:hover {
+		animation: pulse 1s 2;
+	}
+}
+
+@keyframes pulse {
+	0% {
+		transform: scale(0.95);
+		box-shadow: 0 0 0 0 rgba($secondary, 0.7);
+	}
+
+	70% {
+		transform: scale(1);
+		box-shadow: 0 0 0 10px rgba($secondary, 0);
+	}
+
+	100% {
+		transform: scale(0.95);
+		box-shadow: 0 0 0 0 rgba($secondary, 0);
+	}
+}

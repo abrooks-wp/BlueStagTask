@@ -12,7 +12,28 @@ defined( 'ABSPATH' ) || exit;
 
 $container = get_theme_mod( 'understrap_container_type' );
 ?>
-
+<div id="wrapper-navbar">
+	<div class="container">
+	<nav id="footer-nav" class="navbar navbar-expand-md navbar-dark" aria-labelledby="footer-nav-label">
+	
+				<!-- The WordPress Menu goes here -->
+				<?php
+          wp_nav_menu(
+            array(
+              'theme_location'  => 'footer',
+              'container_class' => 'collapse navbar-collapse',
+              'container_id'    => 'footernavbarNavDropdown',
+              'menu_class'      => 'navbar-nav ml-auto',
+              'fallback_cb'     => '',
+              'menu_id'         => 'footer-menu',
+              'depth'           => 1,
+              'walker'          => new Understrap_WP_Bootstrap_Navwalker(),
+            )
+          );
+					?>
+		</nav>
+	</div>
+</div>
 <?php get_template_part( 'sidebar-templates/sidebar', 'footerfull' ); ?>
 
 <div class="wrapper" id="wrapper-footer">
@@ -25,7 +46,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 				<footer class="site-footer" id="colophon">
 
-					<div class="site-info">
+					<div class="site-info center">
 
 						<?php understrap_site_info(); ?>
 
